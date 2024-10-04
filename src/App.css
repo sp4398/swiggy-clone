@@ -1,0 +1,124 @@
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header {
+  display: flex;
+  background-color: #e99e58;
+  justify-content: space-between;
+}
+
+.body {
+  margin: 10px;
+}
+.logo-img {
+  height: 100px;
+  width: 100px;
+  align-items: left;
+  margin: 3px 3px;
+}
+
+.nav-items > ul {
+  display: flex;
+  margin: 30px 20px;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  list-style-type: none;
+  font-size: 20px;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+}
+
+.nav-items > ul > li:hover{
+  color: black;
+}
+
+.res-card {
+  width: 200px;
+  height: 300px;
+  margin: 5px;
+  background-color: #f0f0f0;
+}
+
+.cards {
+  display: flex;
+  margin: 5px;
+}
+.cardImg {
+  width: 180px;
+  padding: 10px;
+  height: 150px;
+}
+
+.res-detail {
+  margin: 5px;
+}
+
+.res-title {
+  font-size: 18px;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: 700;
+}
+
+.distance {
+  font-weight: 600;
+}
+
+.desc {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+}
+
+.search-btn{
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #e99e58;
+  border-color: #e99e58;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.input-box{
+  border-radius: 5px;
+  padding: 3px;
+
+
+}
