@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Heading = () => {
   return (
@@ -22,7 +23,7 @@ const Heading = () => {
   );
 };
 
-const ResCard = () => {
+const ResCard = (props) => {
   return (
     <div className="res-card">
       <div className="card-img">
@@ -33,12 +34,13 @@ const ResCard = () => {
         />
       </div>
       <div className="res-detail">
-        <div className="res-title">Burger King</div>
+        <div className="res-title">{props.name}</div>
         <span>
-          ⭐4.5<span className="distance">&nbsp;30-35 mins</span>
+          ⭐{props.rating}
+          <span className="distance">&nbsp;{props.time}</span>
         </span>
         <div className="desc">
-          Beverages, Fast Food
+          {props.cuisins}
           <br />
           Varanasi
         </div>
@@ -47,28 +49,34 @@ const ResCard = () => {
   );
 };
 
-const Search=()=>{
-  return(
+const Search = () => {
+  return (
     <div className="search">
       <input type="txt" placeholder="Search" className="input-box"></input>
       <button className="search-btn">Search</button>
     </div>
-  )
-}
+  );
+};
 
 const Body = () => {
   return (
     <div className="body">
       <div className="search">
-        <Search/>
+        <Search />
       </div>
       <div className="cards">
-        <ResCard />
-        <ResCard />
-        <ResCard />
-        <ResCard />
-        <ResCard />
-        <ResCard />
+        <ResCard
+          name="KFC"
+          cuisins="Biryani, Burger, Fast Food"
+          rating="4.5"
+          time="20-25mins"
+        />
+        <ResCard
+          name="Burger King"
+          cuisins="Burgers, Bevrages"
+          rating="4.3"
+          time="35-40mins"
+        />
       </div>
     </div>
   );
