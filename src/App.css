@@ -80,6 +80,7 @@
 .cards {
   display: flex;
   margin: 5px;
+  flex-wrap: wrap;
 }
 .cardImg {
   width: 180px;
