@@ -1,5 +1,4 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const Heading = () => {
   return (
@@ -794,14 +793,11 @@ const Body = () => {
         <Search />
       </div>
       <div className="cards">
-        <ResCard resData={resList[0]} />
-        <ResCard resData={resList[1]} />
-        <ResCard resData={resList[2]} />
-        <ResCard resData={resList[3]} />
-        <ResCard resData={resList[4]} />
-        <ResCard resData={resList[5]} />
-        <ResCard resData={resList[6]} />
-        <ResCard resData={resList[7]} />
+        {
+          resList.map((restaurant)=>(
+            <ResCard key={restaurant.info.id} resData={restaurant} />
+          ))
+        }
       </div>
     </div>
   );
