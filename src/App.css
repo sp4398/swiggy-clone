@@ -49,6 +49,14 @@
   margin: 3px 3px;
 }
 
+.name{
+  color: white;
+  margin:5px 0 0 -600px;
+  font-style: normal;
+  font-size: larger;
+  font-family: cursive;
+}
+
 .nav-items > ul {
   display: flex;
   margin: 30px 20px;
@@ -59,7 +67,7 @@
   list-style-type: none;
   font-size: 20px;
   color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: cursive;
   cursor: pointer;
 }
 
@@ -70,8 +78,9 @@
 .res-card {
   width: 200px;
   height: 300px;
-  margin: 5px;
+  margin: 25px;
   background-color: #f0f0f0;
+  border-radius: 3%;
 }
 .res-card:hover{
   border: 1px solid black;
@@ -79,13 +88,16 @@
 
 .cards {
   display: flex;
-  margin: 5px;
   flex-wrap: wrap;
+  margin: 50px 150px 0 150px;
 }
+
+
 .cardImg {
   width: 180px;
   padding: 10px;
   height: 150px;
+  
 }
 
 .res-detail {
