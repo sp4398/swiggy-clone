@@ -4,6 +4,7 @@ import resList from "../utils/mockData";
 import { useState } from "react";
 
 const Body = () => {
+  //useState Hook
   const [listOfRes, setListOfRes] = useState(resList);
 
   return (
