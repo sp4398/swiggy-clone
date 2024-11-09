@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Search = () => {
-  const [searchText, setSearchText] = useState;
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div className="search">
