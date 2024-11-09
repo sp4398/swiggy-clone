@@ -7,7 +7,7 @@ const Heading = () => {
         <img className="logo-img" alt="img" src={LOGO_URL} />
       </div>
       <div className="name">
-        <h1>food-Hub</h1>
+        <h1>Let's eat</h1>
       </div>
       <div className="nav-items">
         <ul>

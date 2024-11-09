@@ -1,11 +1,12 @@
 import ResCard from "./ResCard";
-import Search from "./Search";
 import { useEffect, useState } from "react";
 import Simmer from "./Simmer";
 
 const Body = () => {
   //useState Hook
   const [listOfRes, setListOfRes] = useState([]);
+  const [searchedRestaurant, setSearchedRestaurant] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -13,12 +14,16 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.99740&lng=79.00110&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
-    setListOfRes(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    
+    setListOfRes(
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setSearchedRestaurant(
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
 
   if (listOfRes.length === 0) {
@@ -28,7 +33,31 @@ const Body = () => {
   return (
     <div className="body">
       <div className="options">
-        <Search />
+        <div className="search">
+          <input
+            type="txt"
+            placeholder="Search"
+            className="input-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          ></input>
+          <button
+            className="search-btn"
+            onClick={() => {
+              console.log(searchText);
+
+              const searchedRestaurant = listOfRes.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+
+              setSearchedRestaurant(searchedRestaurant);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -43,7 +72,7 @@ const Body = () => {
       </div>
 
       <div className="cards">
-        {listOfRes.map((restaurant) => (
+        {searchedRestaurant.map((restaurant) => (
           <ResCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
