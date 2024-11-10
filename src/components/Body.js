@@ -65,6 +65,7 @@ const Body = () => {
               (res) => res.info.avgRating > 4
             );
             setListOfRes(filteredList);
+            setSearchedRestaurant(filteredList);
           }}
         >
           Top Rated
