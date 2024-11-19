@@ -6,6 +6,8 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
+import Cart from "./components/Cart";
+import RestaurantsMenu from "./components/RestaurantsMenu";
 
 function App() {
   return <RouterProvider router={router} />;
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantsMenu />,
       },
     ],
   },
