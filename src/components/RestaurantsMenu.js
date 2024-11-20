@@ -1,35 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import Simmer from './Simmer';
+import React, { useEffect, useState } from "react";
+import Simmer from "./Simmer";
+import { useParams } from "react-router-dom";
+import { MENU_URL } from "../utils/constants";
 
 const RestaurantsMenu = () => {
+  const [resInfo, setResInfo] = useState(null);
 
-  const [resInfo,setResInfo]=useState(null);
-  useEffect(()=>{
+  const { resId } = useParams();
+
+  useEffect(() => {
     fetchMenu();
-  },[]);
-  const fetchMenu=async ()=>{
-    const data=await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.99740&lng=79.00110&restaurantId=151649&catalog_qa=undefined&submitAction=ENTER")
-    const json=data.json()
-    setResInfo(json.data)
+  }, []);
 
-  }
+  const fetchMenu = async () => {
+    const data = await fetch(MENU_URL + resId);
 
-  if (resInfo===null) return <Simmer/>
+    const json = await data.json();
+    setResInfo(json.data);
+  };
 
-  // const{name}=resInfo?.cards[2]?.card?.card?.info
+  if (resInfo === null) return <Simmer />;
+
+  const { name, cuisines, costForTwoMessage } =
+    resInfo?.cards[2]?.card?.card?.info;
+
+  const { itemCards } =
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 
   return (
     <div>
-      <h1>{resInfo?.cards[2]?.card?.card?.info?.name}</h1>
-      {/* <p>{cuisines}-{costForTwoMessage}</p> */}
+      <h1>{name}</h1>
+      <p>
+        {cuisines.join(", ")} - {costForTwoMessage}
+      </p>
       <h2>Menu</h2>
       <ul>
-        <li>Noodles</li>
-        <li>Noodles</li>
-        <li>Noodles</li>
+        {itemCards.map((item) => (
+          <li key={item.card.info.id}>
+            {item.card.info.name} - {"Rs."} {item.card.info.price / 100}
+          </li>
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default RestaurantsMenu
+export default RestaurantsMenu;
