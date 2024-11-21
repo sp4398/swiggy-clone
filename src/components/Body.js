@@ -1,6 +1,7 @@
 import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Simmer from "./Simmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //useState Hook
@@ -18,13 +19,13 @@ const Body = () => {
     );
 
     const json = await data.json();
-    
+
     setListOfRes(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setSearchedRestaurant(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -76,7 +77,12 @@ const Body = () => {
 
       <div className="cards">
         {searchedRestaurant.map((restaurant) => (
-          <ResCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+          >
+            <ResCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
