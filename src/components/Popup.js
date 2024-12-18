@@ -3,8 +3,14 @@ import React from "react";
 const Popup = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
+  const handleOverlayClick = (e) => {
+    if (e.target.id === "popup-overlay") {
+      onClose();
+    }
+  };
+
   return (
-    <div style={styles.overlay}>
+    <div id="popup-overlay" style={styles.overlay} onClick={handleOverlayClick}>
       <div style={styles.popup}>
         <button style={styles.closeButton} onClick={onClose}>
           &times;
