@@ -21,11 +21,11 @@ const Body = () => {
     const json = await data.json();
 
     setListOfRes(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setSearchedRestaurant(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -80,6 +80,7 @@ const Body = () => {
           <Link
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
+            className="link"
           >
             <ResCard resData={restaurant} />
           </Link>
