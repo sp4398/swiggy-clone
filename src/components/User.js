@@ -55,7 +55,7 @@ const User = ({ name }) => {
 
       <Popup isOpen={isPopup2Open} onClose={closePopup2}>
         <h2>You can connect with me on my social media</h2>
-        <p>This is the second popup, opened from Popup 1.</p>
+        <p>Social media link soon...</p>
         <button className="btn1" onClick={closePopup2}>
           Close
         </button>
