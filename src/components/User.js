@@ -40,9 +40,10 @@ const User = ({ name }) => {
           />
         </div>
         <p>
-        "Hello! Welcome to my website. I am a web developer with 
-        extensive experience in creating websites using React.js, a popular JavaScript library. 
-        This website is a demonstration of my skills and passion for web development."
+          "Hello! Welcome to my website. I am a web developer with extensive
+          experience in creating websites using React.js, a popular JavaScript
+          library. This website is a demonstration of my skills and passion for
+          web development."
         </p>
         <button
           className="btn1"
