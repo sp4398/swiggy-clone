@@ -8,7 +8,7 @@ const User = ({ name }) => {
   const openPopup1 = () => setIsPopup1Open(true);
   const closePopup1 = () => {
     setIsPopup1Open(false);
-    setIsPopup2Open(false); // Close Popup 2 when Popup 1 is closed
+    setIsPopup2Open(false); 
   };
 
   const openPopup2 = () => setIsPopup2Open(true);
@@ -35,7 +35,7 @@ const User = ({ name }) => {
               width: "200px",
               height: "200px",
               borderRadius: "50%",
-              objectFit: "cover", // Ensures the image doesn't distort
+              objectFit: "cover", 
             }}
           />
         </div>
@@ -56,10 +56,66 @@ const User = ({ name }) => {
 
       <Popup isOpen={isPopup2Open} onClose={closePopup2}>
         <h2>You can connect with me on my social media</h2>
-        <p>Social media link soon...</p>
-        <button className="btn1" onClick={closePopup2}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "40px",
+            marginBottom: "20px",
+          }}
+        >
+          <a
+            href="https://www.linkedin.com/in/saurav-pandey-b399731a0/"
+            target="_blank"
+            title="LinkedIn"
+            rel="noreferrer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <i
+              class="fab fa-linkedin"
+              style={{ fontSize: "44px", color: "#0077b5" }}
+            ></i>
+          </a>
+          <a
+            href="https://x.com/sp4398"
+            target="_blank"
+            title="Twitter"
+            rel="noreferrer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <i
+              class="fab fa-twitter-square"
+              style={{ fontSize: "44px", color: "#1da1f2" }}
+            ></i>
+          </a>
+          <a
+            href="https://github.com/sp4398"
+            target="_blank"
+            title="GitHub"
+            rel="noreferrer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <i
+              class="fab fa-github-square"
+              style={{ fontSize: "44px", color: "#333" }}
+            ></i>
+          </a>
+          <a
+            href="https://www.instagram.com/sp4398/#"
+            target="_blank"
+            title="Instagram"
+            rel="noreferrer"
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <i
+              class="fab fa-instagram-square"
+              style={{ fontSize: "44px", color: "#c13584" }}
+            ></i>
+          </a>
+        </div>
+        {/* <button className="btn1" onClick={closePopup2}>
           Close
-        </button>
+        </button> */}
       </Popup>
     </div>
   );
