@@ -7,7 +7,7 @@ const About = () => {
     <div className='about'>
       <h1>About</h1>
       <User name="Saurav Pandey"/>
-      <UserClass name="Saurav" location="UP"/>
+      <UserClass name="Saurav Pandey" location="UP"/>
     </div>
   )
 }
