@@ -29,7 +29,7 @@ const User = ({ name }) => {
         <h2>Saurav Pandey</h2>
         <div>
           <img
-            src="https://media.licdn.com/dms/image/v2/D4D03AQFldmlSlSl6_A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1688619667466?e=1740009600&v=beta&t=aoFssg0PNt7JcrOXdm96OKWkgmKdEC3IuFnRpH_w8jk"
+            src="https://media.licdn.com/dms/image/v2/D5603AQHs-_B7kIPYdQ/profile-displayphoto-shrink_200_200/B56ZSFFdZkGoAc-/0/1737399590222?e=1744243200&v=beta&t=zZ5vZTzpqmysamhXKRvaH2oDpIuJy7yCiKZNsbhYCjI"
             alt="imag"
             style={{
               width: "200px",
