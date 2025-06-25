@@ -8,7 +8,7 @@ const User = ({ name }) => {
   const openPopup1 = () => setIsPopup1Open(true);
   const closePopup1 = () => {
     setIsPopup1Open(false);
-    setIsPopup2Open(false); 
+    setIsPopup2Open(false);
   };
 
   const openPopup2 = () => setIsPopup2Open(true);
@@ -29,13 +29,13 @@ const User = ({ name }) => {
         <h2>Saurav Pandey</h2>
         <div>
           <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQHs-_B7kIPYdQ/profile-displayphoto-shrink_200_200/B56ZSFFdZkGoAc-/0/1737399590222?e=1744243200&v=beta&t=zZ5vZTzpqmysamhXKRvaH2oDpIuJy7yCiKZNsbhYCjI"
+            src="https://avatars.githubusercontent.com/u/84031432?v=4"
             alt="imag"
             style={{
               width: "200px",
               height: "200px",
               borderRadius: "50%",
-              objectFit: "cover", 
+              objectFit: "cover",
             }}
           />
         </div>

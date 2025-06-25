@@ -1,6 +1,5 @@
 import { CDN_URL } from "../utils/constants";
 
-
 const ResCard = (props) => {
   const { resData } = props;
   const { name, avgRating, cuisines, cloudinaryImageId } = resData.info;
@@ -15,7 +14,7 @@ const ResCard = (props) => {
       </div>
       <div className="res-detail">
         <div className="res-title">{name}</div>
-        <span>
+        <span className="rating">
           ⭐{avgRating}
           <span className="distance">
             &nbsp;{resData.info.sla.deliveryTime}mins
