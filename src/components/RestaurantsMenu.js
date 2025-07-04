@@ -1,6 +1,6 @@
 import Simmer from "./Simmer";
 import { useParams } from "react-router-dom";
-import useRestaurantMenu from "./useRestaurantMenu";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantsMenu = () => {
   const { resId } = useParams();

@@ -2,6 +2,7 @@ import ResCard from "./ResCard";
 import { useEffect, useState } from "react";
 import Simmer from "./Simmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   //useState Hook
@@ -28,6 +29,11 @@ const Body = () => {
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false) {
+    return <h1>You are Offline!</h1>;
+  }
 
   if (listOfRes.length === 0) {
     return <Simmer />;
