@@ -5,15 +5,15 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 const Heading = () => {
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between items-center bg-pink-50 shadow-lg p-4">
       <div className="logo">
-        <img className="logo-img" alt="img" src={LOGO_URL} />
+        <img className="w-56" alt="img" src={LOGO_URL} />
       </div>
-      <div className="name">
+      <div className="">
         <h1>Let's eat</h1>
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="flex gap-4">
           <li>Status: {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             <Link className="link" to="/">
