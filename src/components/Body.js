@@ -42,7 +42,7 @@ const Body = () => {
   return (
     <div className="body">
       <div className="flex justify-between items-center p-4">
-        <div className="search">
+        <div className="ml-20 mt-5">
           <input
             type="txt"
             placeholder="Search"
@@ -68,7 +68,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="bg-orange-500 rounded-lg p-2 text-white font-bold"
+          className="bg-orange-500 rounded-lg p-2 mr-20 text-white font-bold"
           onClick={() => {
             const filteredList = listOfRes.filter(
               (res) => res.info.avgRating > 4
@@ -81,7 +81,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap mt-[50px] mx-[150px]">
+      <div className="flex flex-wrap mt-[30px] mx-[150px]">
         {searchedRestaurant.map((restaurant) => (
           <Link
             to={"/restaurants/" + restaurant.info.id}

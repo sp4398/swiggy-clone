@@ -15,28 +15,25 @@ const User = ({ name }) => {
   const closePopup2 = () => setIsPopup2Open(false);
 
   return (
-    <div className="user-card">
-      <div className="user-details">
+    <div className="border border-black w-[500px] ml-[30px]">
+      <div className="ml-3">
         <h2>Developed By: {name}</h2>
         <h3>Location: Varanasi</h3>
         <h4>Contact: sp4398@gmail.com</h4>
       </div>
-      <button className="btn" onClick={openPopup1}>
+      <button
+        className="m-[0px_5px_10px_400px] p-[5px] bg-[#f57e0f] border-none rounded-[5px] text-white cursor-pointer"
+        onClick={openPopup1}
+      >
         Show more
       </button>
 
       <Popup isOpen={isPopup1Open} onClose={closePopup1}>
-        <h2>Saurav Pandey</h2>
         <div>
           <img
             src="https://avatars.githubusercontent.com/u/84031432?v=4"
             alt="imag"
-            style={{
-              width: "200px",
-              height: "200px",
-              borderRadius: "50%",
-              objectFit: "cover",
-            }}
+            className="w-[200px] h-[200px] ml-32 rounded-full object-cover"
           />
         </div>
         <p>
@@ -46,9 +43,8 @@ const User = ({ name }) => {
           web development."
         </p>
         <button
-          className="btn1"
+          className="p-[5px] mr-[10px] mt-5 bg-[#f57e0f] border-none rounded-[5px] text-white cursor-pointer"
           onClick={openPopup2}
-          style={{ marginRight: "10px" }}
         >
           Connect with me
         </button>
@@ -56,14 +52,7 @@ const User = ({ name }) => {
 
       <Popup isOpen={isPopup2Open} onClose={closePopup2}>
         <h2>You can connect with me on my social media</h2>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "40px",
-            marginBottom: "20px",
-          }}
-        >
+        <div className="flex justify-center gap-[40px] mb-[20px]">
           <a
             href="https://www.linkedin.com/in/saurav-pandey-b399731a0/"
             target="_blank"
@@ -113,9 +102,6 @@ const User = ({ name }) => {
             ></i>
           </a>
         </div>
-        {/* <button className="btn1" onClick={closePopup2}>
-          Close
-        </button> */}
       </Popup>
     </div>
   );
