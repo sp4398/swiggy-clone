@@ -41,19 +41,19 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="options">
+      <div className="flex justify-between items-center p-4">
         <div className="search">
           <input
             type="txt"
             placeholder="Search"
-            className="input-box"
+            className="border border-gray-400 rounded-lg p-2 w-60"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           ></input>
           <button
-            className="search-btn"
+            className="bg-orange-500 rounded-lg p-2 ml-5 text-white font-bold"
             onClick={() => {
               console.log(searchText);
 
@@ -68,7 +68,7 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="bg-orange-500 rounded-lg p-2 text-white font-bold"
           onClick={() => {
             const filteredList = listOfRes.filter(
               (res) => res.info.avgRating > 4
@@ -81,7 +81,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="cards">
+      <div className="flex flex-wrap mt-[50px] mx-[150px]">
         {searchedRestaurant.map((restaurant) => (
           <Link
             to={"/restaurants/" + restaurant.info.id}
