@@ -4,10 +4,10 @@ const ResCard = (props) => {
   const { resData } = props;
   const { name, avgRating, cuisines, cloudinaryImageId } = resData.info;
   return (
-    <div className="w-[200px] h-[300px] m-[25px] bg-[#f0f0f0] rounded-[3%] cursor-pointer">
+    <div className="w-[200px] h-80 m-[25px] bg-gray-100 hover:bg-gray-200 rounded-[3%] cursor-pointer">
       <div className="card-img">
         <img
-          className="w-[180px] h-[150px] p-[10px] m-3"
+          className="w-[180px] h-[150px] px-2 py-2 mx-2 rounded-xl"
           src={CDN_URL + cloudinaryImageId}
           alt="cardImg"
         />
