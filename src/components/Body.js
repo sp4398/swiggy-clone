@@ -1,4 +1,4 @@
-import ResCard from "./ResCard";
+import ResCard, { withPromotedLabel } from "./ResCard";
 import { useEffect, useState } from "react";
 import Simmer from "./Simmer";
 import { Link } from "react-router-dom";
@@ -9,6 +9,8 @@ const Body = () => {
   const [listOfRes, setListOfRes] = useState([]);
   const [searchedRestaurant, setSearchedRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const PromotedResCard = withPromotedLabel(ResCard);
 
   useEffect(() => {
     fetchData();
@@ -88,7 +90,11 @@ const Body = () => {
             key={restaurant.info.id}
             className="link"
           >
-            <ResCard resData={restaurant} />
+            {restaurant.info.promoted ? (
+              <PromotedResCard resData={restaurant} />
+            ) : (
+              <ResCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

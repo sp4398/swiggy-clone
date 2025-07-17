@@ -2,7 +2,7 @@ import { CDN_URL } from "../utils/constants";
 
 const ResCard = (props) => {
   const { resData } = props;
-  const { name, avgRating, cuisines, cloudinaryImageId } = resData.info;
+  const { name, avgRating, cuisines, cloudinaryImageId } = resData?.info;
   return (
     <div className="w-[200px] h-80 m-[25px] bg-gray-100 hover:bg-gray-200 rounded-[3%] cursor-pointer">
       <div className="card-img">
@@ -29,6 +29,20 @@ const ResCard = (props) => {
       </div>
     </div>
   );
+};
+
+//Higher order component
+//input: ResCard => ResCardPromoted
+
+export const withPromotedLabel = (ResCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-gray-300 text-white">Promoted</label>
+        <ResCard {...props} />
+      </div>
+    );
+  };
 };
 
 export default ResCard;

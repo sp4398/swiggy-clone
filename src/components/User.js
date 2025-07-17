@@ -15,7 +15,7 @@ const User = ({ name }) => {
   const closePopup2 = () => setIsPopup2Open(false);
 
   return (
-    <div className="border border-black w-[500px] ml-[30px]">
+    <div className="border border-black w-[500px] ml-7">
       <div className="ml-3">
         <h2>Developed By: {name}</h2>
         <h3>Location: Varanasi</h3>
