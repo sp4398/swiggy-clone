@@ -8,7 +8,7 @@ const Body = () => {
   //useState Hook
   const [listOfRes, setListOfRes] = useState([]);
   const [searchedRestaurant, setSearchedRestaurant] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState([]);
 
   const PromotedResCard = withPromotedLabel(ResCard);
 
@@ -18,7 +18,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6319387&lng=77.2811014&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.390620774100825&lng=76.97460650105715&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -37,7 +37,7 @@ const Body = () => {
     return <h1>You are Offline!</h1>;
   }
 
-  if (listOfRes.length === 0) {
+  if (listOfRes?.length === 0) {
     return <Simmer />;
   }
 
